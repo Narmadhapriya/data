@@ -1,0 +1,253 @@
+<html>
+<body>
+<h1><center>WELCOME TO HAPPY HOME</center></h1>
+         <center><h2>Manage Room Details</h2>
+         <style type="text/CSS">
+         body{
+         background-image:linear-gradient(to left,white,lightgreen);
+         }
+
+h1{
+  color:white;
+  padding:1.5%;
+  margin-top:-1% ;
+  margin-right: -1%;
+  margin-left: -1%;
+  background-color:darkgreen;
+  font-size:25px;
+  
+}
+label{
+    width: 100px;
+    display: inline-block;
+    margin-right: 10%;
+    
+
+}
+submit
+    {
+        width: 100px;
+        text-align: center;
+        margin-bottom: : 50px;
+        font-size: 20px;
+    }
+
+input{
+	padding: 4px;
+}
+</style>
+         <form action="room_details">
+         
+         <table>
+                 <tr>
+                       <td>BlockNo:</td>
+                       <td><input type="num" name="BlockNo" id="bn" onkeyup="blockvalid()" required><span id="err"></span></td>
+                  </tr>
+                  
+                  <tr> 
+                       <td>RoomNo:</td>
+                       <td><input type="num" name="RoomNo" id="rn" onkeyup="roomvalid()" required><span id="err1"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>Foodstatus:</td>
+                       <td><input type="text" name="Foodstatus" id="fs" onkeyup="foodvalid()" required><span id="err2"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>Roomtype:</td>
+                       <td><input type="text" name="Roomtype" id="rt" onkeyup="roomtypevalid()" required><span id="err3"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>Duration:</td>
+                       <td><input type="num" name="Duration" placeholder="month"id="dn" onkeyup="durationvalid()" required><span id="err4"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>Fees:</td>
+                       <td><input type="num" name="Fees" id="fs" onkeyup="feesvalid()" required><span id="err5"></span></td>
+                  </tr>
+                  
+                  <tr> 
+                       <td></td>
+                       <td><input type="submit" value="Save" onclick="valid()"></td>
+                  </tr>
+                   <script>
+              
+	function valid(){
+		var blockno=document.getElementById("bn").value;
+		var roomno=document.getElementById("rn").value;
+		var foodstatus=document.getElementById("fs").value;
+		var roomtype=document.getElementById("rt").value;
+		var duration=document.getElementById("dn").value;
+		var fees=document.getElementById("fs").value;
+		err=document.getElementById("err");
+		err1=document.getElementById("err1");
+		err2=document.getElementById("err2");
+		err3=document.getElementById("err3");
+		err4=document.getElementById("err4");
+		err5=document.getElementById("err5");
+		
+		if(!blockno.length==0 && !roomno.length==0 && !foodstatus.length==0 && !roomtype.length==0 && !duration.length==0 && !fees.length==0)
+		{
+			alert("Registered Successfully!")
+		}
+		else
+		{
+			
+			if(blockno.length==0)
+			{
+				err.innerHTML="*please enter BlockNo";
+			        err.style.color="red";
+			}
+			else
+			{
+				err.innerHTML="";
+			}
+			
+			if(roomno.length==0)
+			{
+				err1.innerHTML="*please enter RoomNo";
+				err1.style.color="red";
+			}
+			else
+			{
+				err1.innerHTML="";
+			}
+			
+			if(foodstatus.length==0)
+			{
+				err2.innerHTML="*please enter Foodstatus";
+				err2.style.color="red";	
+			}
+			else
+			{
+				err2.innerHTML="";	
+			}
+			if(roomtype.length==0)
+			{
+				err3.innerHTML="*please enter Roomtype";
+				err3.style.color="red";
+			}
+			else
+			{
+				err3.innerHTML="";
+			}
+			if(duration.length==0)
+			{
+				err4.innerHTML="*please enter Duration";
+				err4.style.color="red";
+			}
+			else
+			{
+				err4.innerHTML="";
+			}
+			if(fees.length==0)
+			{
+				err5.innerHTML="*please enter Fees";
+				err5.style.color="red";
+			}
+			else
+			{
+				err5.innerHTML="";
+		        }
+		}
+			
+	}
+	function blockvalid(){
+		var bn,reg;
+   	   	reg=  /^\d{1}$/
+   	    	bn=document.getElementById("bn").value;
+   	   	err=document.getElementById("err");
+   	  	if(!reg.test(bn))
+   	    	{
+   	       	err.innerHTML="Invalid BlockNo!";
+   	        	err.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err.innerHTML="";
+   	    	}
+   	    }
+   	    	function roomvalid(){
+		var rn,reg;
+   	   	reg=  /^\d{3}$/
+   	    	rn=document.getElementById("rn").value;
+   	   	err1=document.getElementById("err1");
+   	  	if(!reg.test(rn))
+   	    	{
+   	       	err1.innerHTML="Invalid RoomNo!";
+   	        	err1.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err1.innerHTML="";
+   	    	}
+	}
+	function foodvalid(){
+		var fs,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	fs=document.getElementById("fs").value;
+   	   	err2=document.getElementById("err2");
+   	  	if(!reg.test(fs))
+   	    	{
+   	       		err2.innerHTML="Enter only alphabets";
+   	        	err2.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err2.innerHTML="";
+   	    	}
+	}
+	function roomtypevalid(){
+		var rt,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	rt=document.getElementById("rt").value;
+   	   	err3=document.getElementById("err3");
+   	  	if(!reg.test(rt))
+   	    	{
+   	       		err3.innerHTML="Enter only alphabets";
+   	        	err3.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err3.innerHTML="";
+   	    	}
+	}
+	function durationvalid(){
+		var dn,reg;
+   	   	reg=  /^\d{1}$/
+   	    	dn=document.getElementById("dn").value;
+   	   	err4=document.getElementById("err4");
+   	  	if(!reg.test(dn))
+   	    	{
+   	                err4.innerHTML="Invalid duration";
+   	        	err4.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err4.innerHTML="";
+   	    	}
+	}
+	function feesvalid(){
+		var fs,reg;
+   	   	reg=  "";
+   	    	fs=document.getElementById("fs").value;
+   	   	err5=document.getElementById("err5");
+   	  	if(!reg.test(fs))
+   	    	{
+   	                err5.innerHTML="Enter only values";
+   	        	err5.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err5.innerHTML="";
+   	    	}
+	}
+	
+	
+	
+</script>
+         </table>
+         </form>
+         </center> 
+       
+  </body>       
+  </html>

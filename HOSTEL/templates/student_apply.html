@@ -1,0 +1,324 @@
+<html>
+<body>
+<h1><center>WELCOME TO HAPPY HOME</center></h1>
+         <center><h2>Student Register</h2>
+         <style type="text/CSS">
+         body{
+         background-image:linear-gradient(to left,pink,paleturquoise);
+         }
+*{
+	font-family:darkturquoise;
+}
+h1{
+  color: honeydew;
+  padding:1.5%;
+  margin-top:-1% ;
+  margin-right: -1%;
+  margin-left: -1%;
+  background-color: #00ced1;
+  font-size:25px;
+  
+}
+label{
+    width: 100px;
+    display: inline-block;
+    margin-right: 10%;
+    
+
+}
+submit
+    {
+        width: 100px;
+        text-align: center;
+        margin-bottom: : 50px;
+        font-size: 20px;
+    }
+
+input{
+	padding: 4px;
+}
+</style>
+         <form action="student_apply_data">
+         
+         <table>
+                 <tr>
+                       <td>Student RegNo:</td>
+                       <td><input type="num" name="RegNo" id="rn" onkeyup="regnovalid()" required><span id="err"></span></td>
+                  </tr>
+                  <tr> 
+                  <tr> 
+                       <td>Student Name:</td>
+                       <td><input type="text" name="Name" id="nm" onkeyup="namevalid()" required><span id="err1"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>Email ID:</td>
+                       <td><input type="email" id="em" onkeyup="emailvalid()" name="Email" required><span id="err2"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>MobileNo:</td>
+                       <td><input type="tel" name="MobileNo" id="mn" onkeyup="numvalid()" required><span id="err3"></td>
+                  </tr>
+                  <tr> 
+                       <td>Course Name:</td>
+                       <td><input type="text" name="Course" id="cs" onkeyup="coursevalid()" required><span id="err4"></td>
+                  </tr>
+                  <tr> 
+                       <td>Semester:</td>
+                       <td><input type="num" name="Semester" id="sm" onkeyup="semvalid()" required><span id="err5"></td>
+                  </tr>
+                  <tr> 
+                       <td>Address:</td>
+                       <td><input type="text" name="Address" id="ad"><span id="err6" required></td>
+                  </tr>
+                       <td>Password:</td>
+                       <td><input type="password" name="pass" id="ps" onkeyup="passvalid()" required><span id="err7"></span></td>
+                  </tr>
+                  <tr> 
+                       <td>Confirm Password:</td>
+                       <td><input type="password" name="Cpass" id="cps" onkeyup="cpassvalid()" required><span id="err8"></td>
+                  </tr>
+                  <tr> 
+                       <td></td>
+                       <td><input type="submit" value="Save" onclick="valid()"></td>
+                  </tr>
+                 <script>
+              
+	function valid(){
+		var Regno=document.getElementById("rn").value;
+		var Name=document.getElementById("nm").value;
+		var Email=document.getElementById("em").value;
+		var Mobileno=document.getElementById("mn").value;
+		var Course=document.getElementById("cs").value;
+		var Semester=document.getElementById("sm").value;
+		var Address=document.getElementById("ad").value;
+		var password=document.getElementById("ps").value;
+		var Cpassword=document.getElementById("cps").value;
+		err=document.getElementById("err");
+		err1=document.getElementById("err1");
+		err2=document.getElementById("err2");
+		err3=document.getElementById("err3");
+		err4=document.getElementById("err4");
+		err5=document.getElementById("err5");
+		err6=document.getElementById("err6");
+		err7=document.getElementById("err7");
+		err8=document.getElementById("err8");
+		if(!Regno.length==0 && !Name.length==0 && !Email.length==0 && !Mobileno.length==0 && !Course.length==0 && !Semester.length==0 && !Address.length==0 && !password.length==0 && !Cpassword.length==0)
+		{
+			alert("Registered Successfully!")
+		}
+		else
+		{
+			
+			if(Regno.length==0)
+			{
+				err.innerHTML="*please enter RegNo";
+			        err.style.color="red";
+			}
+			else
+			{
+				err.innerHTML="";
+			}
+			
+			if(Name.length==0)
+			{
+				err1.innerHTML="*please enter Name";
+				err1.style.color="red";
+			}
+			else
+			{
+				err1.innerHTML="";
+			}
+			
+			if(Email.length==0)
+			{
+				err2.innerHTML="*please enter Email ID";
+				err2.style.color="red";	
+			}
+			else
+			{
+				err2.innerHTML="";	
+			}
+			if(Mobileno.length==0)
+			{
+				err3.innerHTML="*please enter MobileNo";
+				err3.style.color="red";
+			}
+			else
+			{
+				err3.innerHTML="";
+			}
+			if(Course.length==0)
+			{
+				err4.innerHTML="*please enter CourseName";
+				err4.style.color="red";
+			}
+			else
+			{
+				err4.innerHTML="";
+			}
+			if(Semester.length==0)
+			{
+				err5.innerHTML="*please enter semester";
+				err5.style.color="red";
+			}
+			else
+			{
+				err5.innerHTML="";
+			}
+			if(Address.length==0)
+			{
+				err6.innerHTML="*please enter Address";
+				err6.style.color="red";
+			}
+			else
+			{
+				err6.innerHTML="";
+			}
+			if(password.length==0)
+			{
+				err7.innerHTML="*please enter Password";
+				err7.style.color="red";
+			}
+			else
+			{
+				err7.innerHTML="";
+			}
+			if(Cpassword.length==0)
+			{
+				err8.innerHTML="*please enter Confirm Password";
+				err8.style.color="red";
+			}
+			else
+			{
+				err8.innerHTML="";
+			}
+		}
+	}
+	function regnovalid(){
+		var rn,reg;
+   	   	reg=  /^\d{4}$/
+   	    	rn=document.getElementById("rn").value;
+   	   	err=document.getElementById("err");
+   	  	if(!reg.test(rn))
+   	    	{
+   	                err.innerHTML="Invalid regno";
+   	        	err.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err.innerHTML="";
+   	    	}
+	}
+	function namevalid(){
+		var nm,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	nm=document.getElementById("nm").value;
+   	   	err1=document.getElementById("err1");
+   	  	if(!reg.test(nm))
+   	    	{
+   	       		err1.innerHTML="Enter only alphabets";
+   	        	err1.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err1.innerHTML="";
+   	    	}
+	}
+	
+	function emailvalid()
+	{
+	    var em,reg;
+	    reg= /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,3})$/;
+	    var em=document.getElementById("em").value;
+		err2=document.getElementById("err2");
+		if(!reg.test(em))
+		{
+		    err2.innerHTML="Invalid EmailId!";
+		    err2.style.color="red";
+		}
+		else
+		{
+		    err2.innerHTML="";
+		}
+	}
+	function numvalid(){
+		var mn,reg;
+   	   	reg=  /^\d{10}$/
+   	    	mn=document.getElementById("mn").value;
+   	   	err3=document.getElementById("err3");
+   	  	if(!reg.test(mn))
+   	    	{
+   	       	err3.innerHTML="Invalid contact!";
+   	        	err3.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err3.innerHTML="";
+   	    	}
+	}
+	function coursevalid(){
+		var cs,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	cs=document.getElementById("cs").value;
+   	   	err4=document.getElementById("err4");
+   	  	if(!reg.test(cs))
+   	    	{
+   	       		err4.innerHTML="Enter only alphabets";
+   	        	err4.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err4.innerHTML="";
+   	    	}
+	}
+	function semvalid(){
+		var sm,reg;
+   	   	reg=  /^\d{1}$/
+   	    	sm=document.getElementById("sm").value;
+   	   	err5=document.getElementById("err5");
+   	  	if(!reg.test(sm))
+   	    	{
+   	       	err5.innerHTML="Invalid semester!";
+   	        	err5.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err5.innerHTML="";
+   	    	}
+	}
+	function passvalid(){
+		var ps=document.getElementById("ps").value;
+		var err7=document.getElementById("err7");
+		
+		if(ps.length<5||ps.length>8)
+            	{
+                	err7.innerHTML="Invalid password!";
+                	err7.style.color="red";
+            	}
+            	else
+            	{
+                	err7.innerHTML="";
+            	}
+	}
+	function cpassvalid()
+        {
+             var reg= /^([a-zA-Z0-9@*#]{8,15})$/;
+             var cps=document.getElementById("cps").value;
+             var err8=document.getElementById("err8");
+          if(!reg.test(cps))
+            {
+                   err8.innerHTML="Invalid Password!";
+                err8.style.color="red";
+            }
+            else
+            {
+                err8.innerHTML="";
+            }
+        }
+</script>
+         </table>
+         </form>
+         </center> 
+       
+  </body>       
+  </html>

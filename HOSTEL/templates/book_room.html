@@ -1,0 +1,286 @@
+<html>
+<body>
+<h1><center>WELCOME TO HAPPY HOME</center></h1>
+         <center><h2>Book Room Info</h2>
+         <style type="text/CSS">
+         body{
+         background-image:linear-gradient(to left,white,darkorchid);
+         }
+
+h1{
+  color: honeydew;
+  padding:1.5%;
+  margin-top:-1% ;
+  margin-right: -1%;
+  margin-left: -1%;
+  background-color:darkviolet;
+  font-size:25px;
+  
+}
+label{
+    width: 100px;
+    display: inline-block;
+    margin-right: 10%;
+    
+
+}
+submit
+    {
+        width: 100px;
+        text-align: center;
+        margin-bottom: : 50px;
+        font-size: 20px;
+    }
+
+input{
+	padding: 4px;
+}
+</style>
+         <form action="book_room" method="post">
+         {% csrf_token %}
+         
+         <table>
+                
+                  <tr> 
+                  <tr> 
+                       <td>Name:</td>
+                        <td><input type="text" name="Name" id="nm" onkeyup="namevalid()" required><span id="err"></td>
+                  </tr>
+                  <tr> 
+                       <td>Department:</td>
+                       <td><input type="text" name="Department" id="dp" onkeyup="dpmtvalid()" required><span id="err1"></td>
+                  </tr>
+                  <tr> 
+                       <td>MobileNo:</td>
+                       <td><input type="tel" name="MobileNo" id="mn" onkeyup="mobilevalid()" required><span id="err2"></td>
+                  </tr>
+                  <tr> 
+                       <td>RoomNo:</td>
+                       <td><input type="num" name="RoomNo" id="rn" onkeyup="roomvalid()" required><span id="err3"></td>
+                  </tr>
+                  <tr> 
+                       <td>BlockNo:</td>
+                       <td><input type="num" name="BlockNo" id="bn" onkeyup="blockvalid()" required><span id="err4"></td>
+                  </tr>
+                  <tr> 
+                       <td>Food Status:</td>
+                       <td><input type="text" name="Foodstatus" id="fs" onkeyup="foodvalid()" required><span id="err5"></td>
+                  </tr>
+                  <tr> 
+                       <td>Duration:</td>
+                       <td><input type="num" name="Duration" placeholder="month" id="dn" onkeyup="durationvalid()" required><span id="err6"></td>
+                  </tr>
+                   <tr> 
+                       <td></td>
+                       <td><input type="submit" value="Save" onclick="valid()"></td>
+                  </tr>
+                  <script>
+                function valid(){
+		var name=document.getElementById("nm").value;
+		var dpmt=document.getElementById("dp").value;
+		var mobile=document.getElementById("mn").value;
+		var roomno=document.getElementById("rn").value;
+		var blockno=document.getElementById("bn").value;
+		var food=document.getElementById("fs").value;
+		var duration=document.getElementById("dn").value;
+		err=document.getElementById("err");
+		err1=document.getElementById("err1");
+		err2=document.getElementById("err2");
+		err3=document.getElementById("err3");
+		err4=document.getElementById("err4");
+		err5=document.getElementById("err5");
+		err6=document.getElementById("err6");
+		
+		if(!name.length==0 && !dpmt.length==0 && !mobile.length==0 && !roomno.length==0 && !blockno.length==0 && !food.length==0 && !duration.length==0)
+		{
+			alert("Registered Successfully!")
+		}
+		else
+		{
+			
+			if(name.length==0)
+			{
+				err.innerHTML="*please enter Name";
+			        err.style.color="red";
+			}
+			else
+			{
+				err.innerHTML="";
+			}
+			
+			if(dpmt.length==0)
+			{
+				err1.innerHTML="*please enter Department";
+				err1.style.color="red";
+			}
+			else
+			{
+				err1.innerHTML="";
+			}
+			
+			if(mobile.length==0)
+			{
+				err2.innerHTML="*please enter MobileNo";
+				err2.style.color="red";	
+			}
+			else
+			{
+				err2.innerHTML="";	
+			}
+			if(roomno.length==0)
+			{
+				err3.innerHTML="*please enter RoomNo";
+				err3.style.color="red";
+			}
+			else
+			{
+				err3.innerHTML="";
+			}
+			if(blockno.length==0)
+			{
+				err4.innerHTML="*please enter BlockNo";
+				err4.style.color="red";
+			}
+			else
+			{
+				err4.innerHTML="";
+			}
+			if(food.length==0)
+			{
+				err5.innerHTML="*please enter Foodstatus";
+				err5.style.color="red";
+			}
+			else
+			{
+				err5.innerHTML="";
+		        }
+		        if(duration.length==0)
+			{
+				err6.innerHTML="*please enter Duration";
+				err6.style.color="red";
+			}
+			else
+			{
+				err6.innerHTML="";
+		        }
+		}
+			
+	}
+	function namevalid(){
+		var nm,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	nm=document.getElementById("nm").value;
+   	   	err=document.getElementById("err");
+   	  	if(!reg.test(nm))
+   	    	{
+   	       	err.innerHTML="Enter only alphabets";
+   	        	err.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err.innerHTML="";
+   	    	}
+	}
+	function dpmtvalid(){
+		var dp,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	dp=document.getElementById("dp").value;
+   	   	err1=document.getElementById("err1");
+   	  	if(!reg.test(dp))
+   	    	{
+   	       	err1.innerHTML="Enter only alphabets";
+   	        	err1.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err1.innerHTML="";
+   	    	}
+	}
+	function mobilevalid(){
+		var mn,reg;
+   	   	reg=  /^\d{10}$/
+   	    	mn=document.getElementById("mn").value;
+   	   	err2=document.getElementById("err2");
+   	  	if(!reg.test(mn))
+   	    	{
+   	       	err2.innerHTML="Invalid contact!";
+   	        	err2.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err2.innerHTML="";
+   	    	}
+	}
+	function roomvalid(){
+		var rn,reg;
+   	   	reg=  /^\d{3}$/
+   	    	rn=document.getElementById("rn").value;
+   	   	err3=document.getElementById("err3");
+   	  	if(!reg.test(rn))
+   	    	{
+   	       	err3.innerHTML="Invalid RoomNo!";
+   	        	err3.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err3.innerHTML="";
+   	    	}
+	}
+	
+	function blockvalid(){
+		var bn,reg;
+   	   	reg=  /^\d{1}$/
+   	    	bn=document.getElementById("bn").value;
+   	   	err4=document.getElementById("err4");
+   	  	if(!reg.test(bn))
+   	    	{
+   	       	err4.innerHTML="Invalid BlockNo!";
+   	        	err4.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err4.innerHTML="";
+   	    	}
+   	    }
+   	    function foodvalid(){
+		var fs,reg;
+   	   	reg= /^[a-zA-Z]*$/
+   	    	fs=document.getElementById("fs").value;
+   	   	err5=document.getElementById("err5");
+   	  	if(!reg.test(fs))
+   	    	{
+   	       	err5.innerHTML="Enter only alphabets";
+   	        	err5.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err5.innerHTML="";
+   	    	}
+	}
+	function durationvalid(){
+		var dn,reg;
+   	   	reg=  /^\d{1}$/
+   	    	dn=document.getElementById("dn").value;
+   	   	err6=document.getElementById("err6");
+   	  	if(!reg.test(dn))
+   	    	{
+   	                err6.innerHTML="Invalid duration";
+   	        	err6.style.color="red";
+   	    	}
+   	    	else
+   	    	{
+   	        	err6.innerHTML="";
+   	    	}
+	}
+   	    	
+	
+	
+</script>
+         </table>
+         </form>
+         </center> 
+       
+  </body>       
+  </html>
+  
+                   

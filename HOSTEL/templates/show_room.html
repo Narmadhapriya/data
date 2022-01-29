@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+    <body>
+    <h1><center>WELCOME TO HAPPY HOME</center></h1>
+         <style type="text/CSS">
+         body{
+         background-image:linear-gradient(to left,pink,paleturquoise);
+         }
+*{
+	font-family:darkturquoise;
+}
+h1{
+  color: honeydew;
+  padding:1.5%;
+  margin-top:-1% ;
+  margin-right: -1%;
+  margin-left: -1%;
+  background-color: #00ced1;
+  font-size:25px;
+  
+}
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: turquoise;
+  height: 20px;
+  color: black;
+}
+</style>
+</head>
+<body style="background-color: teal">
+	<center><h1 style="color:white">Show Room Details</h1></center>
+	<center>
+	<table style="width:100%">
+		<tr>
+
+		<th>BlockNo</th>
+		<th>RoomNo</th>
+		<th>Foodstatus</th>
+		<th>Roomtype</th>
+		<th>Duration</th>
+		<th>Fees</th>
+	
+		</tr>
+		{% for i in result %} 
+		<tr>
+		{% for j in i %} 
+		<td>{{j}}</td>
+		{% endfor %}
+		</tr>
+		{% endfor %} 
+		</table>
+	</center>
+	
+</body>
+</html>

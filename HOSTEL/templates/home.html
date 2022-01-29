@@ -1,0 +1,147 @@
+<!--
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Hostel</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  </head>
+  <body>
+  <div class="container-fluid">
+  <center><h1 class=background:cyan>Hostel Management System</h1></center>
+      <div class="row"> 
+                <div class="col-lg-3"><center><a href="admin login">Admin</a></center></div>
+                 <div class="col-lg-3"><center><a href="student login">Student</a></center></div>
+                  <div class="col-lg-3"><center><a href="contactus">contact</a></center></div>
+                 <div class="col-lg-3"><center><a href="helpus">Help</a></center></div>
+           </div>
+          </div>
+         
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>
+-->
+<!--
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>HMS</title>
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid">
+  		<center><h1 class="bg-primary">HOSPITAL MANAGEMENT SYSTEM</h1></center><br><br>
+  		<div class="row">
+  		<div class="col-md-3"><center><a href="admin_login" >Admin</a></center></div>
+  		<div class="col-md-3"><center><a href="doctor_login" >Doctor</a></center></div>
+  		<div class="col-md-3"><center><a href="patient_login" >Patient</a></center></div>       
+  		<div class="col-md-3"><center><a href="contact" >ContactUs</a></center></div>
+  		</div>
+  		<br><br><br><br>
+  		<div class="jumbotron-fluid" style="margin-bottom: 0px;margin-top: 0px;">
+  		<center><h3>Emergency ?</h3>
+  		<p class="lead">
+    <a class="btn btn-danger btn-lg" href="patient_login" role="button">Take Appointment Now!</a>
+  </p></center></div>
+     	</div>  
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>
+-->
+{% load static %}
+<html>
+  <head>
+  <title>Hostel</title>
+  <style>
+  h1{
+  color: honeydew;
+  padding:1.5%;
+  margin-top:-1% ;
+  margin-right: -1%;
+  margin-left: -1%;
+  background-color: #00ced1;
+  font-size:25px;
+  }
+  
+  *{
+           margin:0;
+           padding:0;
+           }     
+  body{
+	background-image: url({% static 'Building.jpeg' %});
+	background-repeat: no-repeat;
+
+	background-size:730px 500px;
+	}
+	
+   #container{
+           height:100%;
+           color:Black;
+           }
+   #header{ 
+           height:20%;
+           }
+   
+    #menu{ 
+            height:5%;
+           } 
+           ul{ 
+           list-style:none;
+           }
+           li{
+           display:inline;
+           margin:50px;
+           }
+    #content{ 
+            height:70%; 
+            }
+    #footer{ 
+            height:5%;
+            }
+           
+   </style>
+   </head>
+  <body>
+
+        <div id="container">
+        <div id="header">
+        <br><br>
+            <center><h1 style="color:black;background-color:Gold;"><b>HAPPY HOME HOSTEL MANAGEMENT SYSTEM</b></h1></center>
+            <br><br><br><br><br><br>
+            
+    </div>
+    <br><br>
+    <div id="menu">
+    <br><br>
+     <ul>
+     <li><a href="student_login"><b style="color:black;background-color:gold;">Student</b></a></li>
+     <li><a href="admin_login"><b style="color:black;background-color:gold;">Admin</b></a></li> 
+     <li><a href="contact"><b style="color:black;background-color:gold;">Contactus</b></a></li>
+     <li><a href="aboutus"><b style="color:black;background-color:gold;">AboutUs</b></a></li>
+     
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <center><h4 style="color:white">©copyright2022|All rights reserved</h4></center>
+     
+    
+     </ul>
+     </div>
+     </div>
+  </body>
+</html>
+
+
+
